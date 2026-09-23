@@ -1,8 +1,8 @@
 # LABGUARD
 
-Prototipo de investigación y desarrollo para apoyo a la validación de resultados de laboratorio bioquímico.
+Aplicación local de apoyo a la validación profesional de resultados de laboratorio.
 
-LABGUARD no es un sistema diagnóstico, no sustituye al profesional, no toma decisiones clínicas autónomas y no libera resultados automáticamente. Esta etapa usa exclusivamente datos ficticios o sintéticos.
+LABGUARD no es un sistema diagnóstico, no sustituye al profesional, no toma decisiones clínicas autónomas y no libera resultados automáticamente. Los datos profesionales se cargan desde CSV o JSON y permanecen localmente en el navegador mediante IndexedDB.
 
 ## Arquitectura
 
@@ -27,7 +27,7 @@ El motor de evaluación es independiente de FastAPI y de la base de datos. Carga
 - `domain`: entidades y contratos de resultados, muestras, QC, reglas, evidencia, alertas y revisiones.
 - `engine`: evaluación determinista de reglas y composición de evidencias.
 - `application`: casos de uso y orquestación.
-- `adapters`: entradas sintéticas ahora; LIS, archivos y equipos en el futuro.
+- `adapters`: entradas mediante archivos locales; las integraciones LIS/equipos son opcionales y no son necesarias para ejecutar la validación.
 - `infrastructure`: persistencia, configuración y auditoría append-only.
 - `frontend`: bandeja de revisión profesional, separando datos, señales y decisión.
 - `rules`: YAML/JSON versionado, con parámetros dependientes de método, instrumento, fabricante o protocolo local.
@@ -38,7 +38,7 @@ El modelo incluye `discipline` para permitir química clínica, hematología, or
 
 ## Flujo de datos
 
-1. Una fuente sintética entrega datos normalizados.
+1. Un profesional carga un archivo local y revisa su vista previa.
 2. Se valida el esquema y se construye el contexto de muestra, resultados, QC e historial para delta checks.
 3. El motor ejecuta las reglas aplicables y conserva la versión de cada regla.
 4. Se generan evidencias explicables y, cuando corresponde, alertas y recomendaciones.
@@ -107,11 +107,10 @@ npm --prefix frontend run dev -- --host 0.0.0.0 --port 5173
 
 El frontend queda en `http://localhost:5173/`, la salud de la API en `http://localhost:8000/health` y la evaluación integrada en `POST http://localhost:8000/validation/evaluate`. En un contenedor o Codespace debe utilizarse el reenvío de esos puertos.
 
-## Uso del simulador
+## Uso profesional
 
 1. Abrir `http://localhost:5173/`.
-2. En `SIMULATOR`, seleccionar `NORMAL SAMPLE`, `DELTA CHECK`, `QC FAILURE`, `HEMOLYZED SAMPLE` o `MULTIPLE FLAGS`.
-3. Pulsar `Ejecutar escenario`.
-4. Revisar `RESULT VALIDATION`, las alertas expandibles, la cadena de evidencia y `AUDIT TRAIL`.
-
-Todos los escenarios son sintéticos. No hay conexión con instrumentos reales ni con LIS.
+2. Seleccionar un archivo CSV o JSON con los campos profesionales requeridos.
+3. Revisar la vista previa y corregir los registros con errores críticos.
+4. Importar los registros válidos, editarlos o eliminarlos desde el almacenamiento local.
+5. Exportar una copia local cuando sea necesario. No se requiere API key, cuenta externa ni envío de resultados a servicios externos.

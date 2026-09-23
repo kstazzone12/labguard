@@ -1,0 +1,9 @@
+{
+  "dataset": "UCUM-compatible local registry",
+  "version": "0.1.0",
+  "source": "Local controlled registry",
+  "units": {
+    "mmol/L": {"normalized_unit": "mmol/L", "conversion_factor": 1, "conversion_source": "identity"},
+    "mg/dL": {"normalized_unit": "mg/dL", "conversion_factor": 1, "conversion_source": "identity"}
+  }
+}

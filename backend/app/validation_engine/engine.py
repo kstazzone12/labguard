@@ -58,6 +58,7 @@ class ValidationEngine:
             review_items=review_items,
             system_recommendation=recommendation,
             professional_decision={"status": "not_recorded"},
+            knowledge_snapshot=validation_input.laboratory_configuration.knowledge_snapshot,
         )
 
     @staticmethod
@@ -76,6 +77,7 @@ class ValidationEngine:
                 configuration={
                     "configuration_version": laboratory_configuration.configuration_version,
                     "laboratory_identifier": laboratory_configuration.laboratory_identifier,
+                    "knowledge_snapshot": laboratory_configuration.knowledge_snapshot.model_dump(),
                 },
                 output_summary=output_summary,
                 evidence={"source": "ValidationEngine"},

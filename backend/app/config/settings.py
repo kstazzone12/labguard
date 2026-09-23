@@ -17,7 +17,7 @@ class Settings:
     database_url: str = os.getenv(
         "LABGUARD_DATABASE_URL", "sqlite:///./labguard.db"
     )
-    synthetic_data_only: bool = _env_bool("LABGUARD_SYNTHETIC_DATA_ONLY", True)
+    synthetic_data_only: bool = _env_bool("LABGUARD_SYNTHETIC_DATA_ONLY", False)
 
 
 settings = Settings()

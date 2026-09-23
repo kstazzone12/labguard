@@ -24,10 +24,20 @@ ValidationStage = Literal[
 ]
 
 
+class KnowledgeSnapshot(BaseModel):
+    loinc_version: str = "NOT_INSTALLED"
+    unit_dataset_version: str = "NOT_INSTALLED"
+    reference_interval_version: str = "NOT_INSTALLED"
+    qc_rules_version: str = "NOT_INSTALLED"
+    interference_rules_version: str = "NOT_INSTALLED"
+    labguard_engine_version: str = "0.1.0"
+
+
 class LaboratoryConfiguration(BaseModel):
     configuration_version: str = Field(min_length=1)
     laboratory_identifier: str = Field(min_length=1)
     settings: dict[str, Any] = Field(default_factory=dict)
+    knowledge_snapshot: KnowledgeSnapshot = Field(default_factory=KnowledgeSnapshot)
 
 
 class ProfessionalDecision(BaseModel):
@@ -85,6 +95,7 @@ class ValidationProfile(BaseModel):
     review_items: list[ReviewItem]
     system_recommendation: str
     professional_decision: ProfessionalDecision
+    knowledge_snapshot: KnowledgeSnapshot
 
     @property
     def has_qc_problem(self) -> bool:
