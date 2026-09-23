@@ -1,0 +1,28 @@
+{
+  "dataset_id": "synthetic-delta-check-001",
+  "purpose": "development-only",
+  "current": {
+    "patient_id": "SYNTH-001",
+    "sample_id": "sample-current-001",
+    "result_id": "result-current-001",
+    "analyte": "SYN-ANALYTE-01",
+    "value": 120,
+    "unit": "synthetic-unit",
+    "timestamp": "2026-01-15T08:00:00Z",
+    "method": "SYN-METHOD-01",
+    "instrument": "SYN-INSTRUMENT-01",
+    "reference_interval_id": null
+  },
+  "previous": {
+    "patient_id": "SYNTH-001",
+    "sample_id": "sample-previous-001",
+    "result_id": "result-previous-001",
+    "analyte": "SYN-ANALYTE-01",
+    "value": 100,
+    "unit": "synthetic-unit",
+    "timestamp": "2026-01-14T08:00:00Z",
+    "method": "SYN-METHOD-01",
+    "instrument": "SYN-INSTRUMENT-01",
+    "reference_interval_id": null
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "dataset_id": "synthetic-analytical-consistency-demo-001",
+  "purpose": "DEMO_PLACEHOLDER_ONLY",
+  "sample_id": "sample-demo-001",
+  "measurements": [
+    {"analyte": "SYN-A", "value": 120, "unit": "synthetic-unit", "source": "measured"},
+    {"analyte": "SYN-B", "value": 100, "unit": "synthetic-unit", "source": "calculated"}
+  ],
+  "rules": [
+    {
+      "rule_id": "DEMO-CONSISTENCY-001",
+      "name": "Diferencia sintetica configurable",
+      "relation": "difference",
+      "involved_analytes": ["SYN-A", "SYN-B"],
+      "category": "ANALYTICAL_REVIEW",
+      "severity": "review",
+      "explanation": "La diferencia supera la tolerancia DEMO configurada.",
+      "recommendation": "Solicitar revisión técnica.",
+      "parameters": {"tolerance": 10},
+      "version": "DEMO-1.0",
+      "source": "DEMO_PLACEHOLDER_PROTOCOL"
+    }
+  ]
+}

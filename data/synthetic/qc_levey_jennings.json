@@ -1,0 +1,15 @@
+{
+  "dataset_id": "synthetic-qc-levey-jennings-001",
+  "purpose": "development-only",
+  "control": {
+    "material": "Synthetic control material",
+    "lot": "SYNTH-LOT-001",
+    "level": "level-1",
+    "analyte": "SYN-ANALYTE-01",
+    "method": "SYN-METHOD-01",
+    "instrument": "SYN-INSTRUMENT-01"
+  },
+  "mean": 100.0,
+  "standard_deviation": 2.0,
+  "observations": [99.8, 100.4, 101.0, 98.8, 100.2, 99.4, 100.8, 101.2, 99.6, 100.0]
+}

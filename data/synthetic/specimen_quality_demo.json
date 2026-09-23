@@ -1,0 +1,36 @@
+{
+  "dataset_id": "synthetic-specimen-quality-demo-001",
+  "purpose": "DEMO_PLACEHOLDER_ONLY",
+  "context": {
+    "sample_id": "sample-demo-001",
+    "analyte": "SYN-ANALYTE-01",
+    "method": "SYN-METHOD-01",
+    "instrument": "SYN-INSTRUMENT-01",
+    "manufacturer": "SYNTHETIC-MANUFACTURER",
+    "sample_type": "synthetic-serum",
+    "hemolysis": "HIGH",
+    "hemolysis_index": null,
+    "lipemia": "NOT_REPORTED",
+    "icteria": "NOT_REPORTED",
+    "volume": 1.0,
+    "volume_unit": "synthetic-unit",
+    "storage_condition": "DEMO_REFRIGERATED",
+    "observations": "Synthetic preanalytical observation",
+    "instrument_flags": {"sample_quality": "DEMO_FLAG"}
+  },
+  "interference": {
+    "interference_id": "DEMO-INTERFERENCE-001",
+    "analyte": "SYN-ANALYTE-01",
+    "method": "SYN-METHOD-01",
+    "manufacturer": "SYNTHETIC-MANUFACTURER",
+    "instrument": "SYN-INSTRUMENT-01",
+    "interference_type": "DEMO_HEMOLYSIS_INTERFERENCE",
+    "level": "HIGH",
+    "source_type": "laboratory_SOP",
+    "source_reference": "DEMO_PLACEHOLDER_SOP_001",
+    "criterion": {"field": "hemolysis", "operator": "equals", "value": "HIGH"},
+    "version": "DEMO-1.0",
+    "effective_date": "2026-01-01",
+    "suggested_action": "Solicitar revisión profesional de la muestra y la evidencia configurada."
+  }
+}

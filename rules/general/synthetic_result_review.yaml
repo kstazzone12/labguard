@@ -1,0 +1,22 @@
+# Regla demostrativa no clinica. El umbral es deliberadamente ficticio.
+id: synthetic.result.review
+name: Revision de resultado sintetico
+version: "1.0"
+description: Genera una señal de revision cuando el dato supera un limite de demostracion.
+category: synthetic-review
+analytes: []
+conditions:
+  all:
+    - field: result.numeric_value
+      operator: gte
+      value: 999999
+severity: review
+suggested_action: Solicitar revision profesional del resultado y su evidencia.
+source: Protocolo sintetico de demostracion
+protocol: synthetic-demo-1
+effective_from: 2026-01-01
+method: null
+instrument: null
+enabled: true
+parameters:
+  note: El valor no representa un limite clinico.

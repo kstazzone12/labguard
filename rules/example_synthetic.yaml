@@ -1,0 +1,22 @@
+# Regla demostrativa no clinica y deliberadamente ficticia.
+id: synthetic.example.review
+name: Revision del ejemplo sintetico
+version: "1.0"
+description: Emite una señal cuando un resultado sintetico contiene un valor de demostracion.
+category: synthetic-review
+analytes: []
+conditions:
+  all:
+    - field: result.value
+      operator: equals
+      value: synthetic-trigger
+severity: review
+suggested_action: Solicitar revision profesional del resultado y su evidencia.
+source: Protocolo sintetico de demostracion
+protocol: synthetic-demo-1
+effective_from: 2026-01-01
+method: null
+instrument: null
+enabled: true
+parameters:
+  note: No representa un criterio clinico.

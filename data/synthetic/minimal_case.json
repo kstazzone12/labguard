@@ -1,0 +1,62 @@
+{
+  "dataset_id": "synthetic-case-001",
+  "purpose": "development-only",
+  "patients": [
+    {
+      "synthetic_identifier": "SYNTH-001"
+    }
+  ],
+  "samples": [
+    {
+      "id": "sample-001",
+      "patient_id": "patient-001",
+      "sample_type": "serum",
+      "collection_time": "2026-01-15T08:00:00Z",
+      "processing_time": "2026-01-15T08:30:00Z",
+      "status": "processed",
+      "hemolysis_index": null,
+      "lipemia_index": null,
+      "icterus_index": null,
+      "preanalytical_observations": "Synthetic observation"
+    }
+  ],
+  "analytes": [
+    {
+      "code": "SYN-ANALYTE-01",
+      "name": "Synthetic analyte",
+      "discipline": "chemistry"
+    }
+  ],
+  "instruments": [
+    {
+      "code": "SYN-INSTRUMENT-01",
+      "manufacturer": "Synthetic manufacturer",
+      "model": "Synthetic model"
+    }
+  ],
+  "methods": [
+    {
+      "code": "SYN-METHOD-01",
+      "name": "Synthetic method",
+      "manufacturer": "Synthetic manufacturer",
+      "protocol_version": "synthetic-1"
+    }
+  ],
+  "reference_intervals": [],
+  "results": [
+    {
+      "id": "result-001",
+      "sample_id": "sample-001",
+      "analyte_code": "SYN-ANALYTE-01",
+      "value": "42.0",
+      "numeric_value": 42.0,
+      "unit": "synthetic-unit",
+      "timestamp": "2026-01-15T08:35:00Z",
+      "reference_interval_id": null,
+      "quality_info": {"source": "synthetic"}
+    }
+  ],
+  "qc_runs": [],
+  "interferences": [],
+  "rules": []
+}

@@ -1,0 +1,21 @@
+# Regla demostrativa no clinica. No define criterios de QC reales.
+id: synthetic.quality.review
+name: Revision de calidad sintetica
+version: "1.0"
+description: Genera una señal cuando el contexto sintetico declara QC no disponible.
+category: synthetic-quality
+analytes: []
+conditions:
+  all:
+    - field: qc.available
+      operator: equals
+      value: false
+severity: information
+suggested_action: Revisar la disponibilidad de informacion de calidad antes de continuar.
+source: Protocolo sintetico de demostracion
+protocol: synthetic-demo-1
+effective_from: 2026-01-01
+method: null
+instrument: null
+enabled: true
+parameters: {}
